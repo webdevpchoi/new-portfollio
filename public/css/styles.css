@@ -1,0 +1,17 @@
+.portfolio {
+  background: green;
+  height: 100vh;
+  position: relative; }
+
+.curtain {
+  background: #000;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+  .curtain h1 {
+    color: white; }
+
+.spacer {
+  background: transparent;
+  height: 100vh; }
