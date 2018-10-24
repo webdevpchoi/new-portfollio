@@ -1,17 +1,43 @@
-.portfolio {
-  background: green;
-  height: 100vh;
+html {
+  box-sizing: border-box; }
+
+*, *:before, *:after {
+  box-sizing: inherit; }
+
+html, body {
+  height: 100%;
+  width: 100%;
+  margin: 0; }
+
+body {
   position: relative; }
 
-.curtain {
-  background: #000;
-  height: 100vh;
+.portfolio {
   display: flex;
   justify-content: center;
-  align-items: center; }
-  .curtain h1 {
-    color: white; }
+  align-items: center;
+  background: green;
+  height: 100vh;
+  width: 100%;
+  position: fixed; }
+  .portfolio .test-btn {
+    width: 75px;
+    height: 50px; }
 
-.spacer {
-  background: transparent;
-  height: 100vh; }
+.curtain-container {
+  height: 200vh;
+  width: 100vw;
+  position: absolute;
+  top: 0;
+  pointer-events: none; }
+  .curtain-container .curtain, .curtain-container .spacer {
+    height: 50%;
+    width: 100%; }
+  .curtain-container .curtain {
+    background: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+    .curtain-container .curtain h1 {
+      color: white;
+      background: red; }
