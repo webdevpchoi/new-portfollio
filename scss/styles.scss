@@ -1,21 +1,60 @@
-.portfolio {
-	background: green;
-	height: 100vh;
-	position: relative;
+html {
+  box-sizing: border-box;
 }
-.curtain {
-	background: #000;
-	height: 100vh;
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+html, body {
+	height: 100%;
+	width: 100%;
+	margin: 0;
+}
+
+@mixin flex-center {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+}
 
-	h1 {
-		color: white;
+body {
+	position: relative;
+}
+
+.portfolio {
+	@include flex-center;
+	background: green;
+	height: 100vh;
+	width: 100%;
+	position: fixed;
+	
+	.test-btn {
+		width: 75px;
+		height: 50px;
 	}
 }
 
-.spacer {
-	background: transparent;
-	height: 100vh;
+.curtain-container {
+	height: 200vh;
+	width: 100vw;
+	position: absolute;
+	top: 0;
+	pointer-events: none;
+
+	.curtain, .spacer {
+		height: 50%;
+		width: 100%;
+	}
+
+	.curtain {
+		background: #000;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		h1 {
+			color: white;
+			background: red;
+		}
+	}
 }
