@@ -1,5 +1,6 @@
 html {
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  font-family: 'Raleway', sans-serif; }
 
 *, *:before, *:after {
   box-sizing: inherit; }
@@ -9,35 +10,60 @@ html, body {
   width: 100%;
   margin: 0; }
 
-body {
-  position: relative; }
+@keyframes appear {
+  from {
+    transform: translate3d(-20px, 0, 0);
+    opacity: 0;
+    color: #888888; }
+  50% {
+    text-shadow: 0 15px 40px rgba(0, 0, 0, 0.6); }
+  to {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+    color: #fff; } }
 
-.portfolio {
+.intro {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: green;
-  height: 100vh;
+  height: 100%;
   width: 100%;
-  position: fixed; }
-  .portfolio .test-btn {
-    width: 75px;
-    height: 50px; }
-
-.curtain-container {
-  height: 200vh;
-  width: 100vw;
-  position: absolute;
-  top: 0;
-  pointer-events: none; }
-  .curtain-container .curtain, .curtain-container .spacer {
-    height: 50%;
+  background: #000;
+  color: #fff;
+  position: relative; }
+  .intro .light-bulb {
+    height: 200px;
+    position: absolute;
+    right: 20%; }
+    .intro .light-bulb .chain {
+      border-right: 5px dotted #fff;
+      height: 100%;
+      margin: 0 auto;
+      position: absolute;
+      top: 60px;
+      left: 50px; }
+    .intro .light-bulb img {
+      height: 75px;
+      width: 75px;
+      float: left; }
+  .intro h1 {
+    margin: .5em;
+    text-align: center;
+    animation: appear 2s; }
+  .intro .slogan {
+    letter-spacing: 1px;
     width: 100%; }
-  .curtain-container .curtain {
-    background: #000;
-    display: flex;
-    justify-content: center;
-    align-items: center; }
-    .curtain-container .curtain h1 {
-      color: white;
-      background: red; }
+    .intro .slogan .ideas {
+      position: relative; }
+      .intro .slogan .ideas h1 {
+        font: 3em 'Permanent Marker';
+        letter-spacing: 2px;
+        margin: 0; }
+      .intro .slogan .ideas .light-bulb {
+        position: absolute;
+        top: 0;
+        left: 0; }
+    .intro .slogan .reality {
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 2.5em; }

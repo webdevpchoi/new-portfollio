@@ -1,6 +1,9 @@
+//global styles
 html {
   box-sizing: border-box;
+  font-family: 'Raleway', sans-serif;
 }
+
 *, *:before, *:after {
   box-sizing: inherit;
 }
@@ -11,50 +14,93 @@ html, body {
 	margin: 0;
 }
 
+//animation
+@keyframes appear {
+	from {
+		transform: translate3d(-20px, 0, 0);
+		opacity: 0;
+		color: #888888;
+	}
+
+	50% {
+		text-shadow: 0 15px 40px rgba(black, 0.6);
+	}
+
+	to {
+		transform: translate3d(0, 0, 0);
+		opacity: 1;
+		color: #fff;
+	}
+
+}
+
+//sass mixins
 @mixin flex-center {
 	display: flex;
 	justify-content: center;
 	align-items: center;
 }
 
-body {
-	position: relative;
-}
-
-.portfolio {
+.intro {
 	@include flex-center;
-	background: green;
-	height: 100vh;
+	height: 100%;
 	width: 100%;
-	position: fixed;
-	
-	.test-btn {
-		width: 75px;
-		height: 50px;
+	background: #000;
+	color: #fff;
+	position: relative;
+
+	.light-bulb {
+		height: 200px;
+		position: absolute;
+		right: 20%;
+
+		.chain {
+			border-right: 5px dotted #fff;
+			height: 100%;
+			margin: 0 auto;
+			position: absolute;
+			top: 60px;
+			left: 50px;
+
+		}
+
+		img {
+			height: 75px;
+			width: 75px;
+			float: left;
+		}
 	}
-}
 
-.curtain-container {
-	height: 200vh;
-	width: 100vw;
-	position: absolute;
-	top: 0;
-	pointer-events: none;
+	h1 {
+		margin: .5em;
+		text-align: center;
+		animation: appear 2s;
+	}
 
-	.curtain, .spacer {
-		height: 50%;
+	.slogan {
+		letter-spacing: 1px;
 		width: 100%;
-	}
 
-	.curtain {
-		background: #000;
-		display: flex;
-		justify-content: center;
-		align-items: center;
+		.ideas {
+			position: relative;
 
-		h1 {
-			color: white;
-			background: red;
+			h1 {
+				font: 3em 'Permanent Marker';
+				letter-spacing: 2px;
+				margin: 0;							
+			}
+
+			.light-bulb {
+				position: absolute;
+				top: 0;
+				left: 0;
+			}
+		}
+
+		.reality {
+			text-transform: uppercase;
+			letter-spacing: 2px;
+			font-size: 2.5em;
 		}
 	}
 }
