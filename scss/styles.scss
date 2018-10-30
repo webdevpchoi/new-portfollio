@@ -34,6 +34,21 @@ html, body {
 
 }
 
+@keyframes revealText {
+	0% {
+		
+	}
+
+	50% {
+		transform: translate3d(-150%, 0, 0);
+	}
+
+	100% {
+		transform: translate3d(155%, 0, 0);
+	}
+
+}
+
 //sass mixins
 @mixin flex-center {
 	display: flex;
@@ -49,28 +64,6 @@ html, body {
 	color: #fff;
 	position: relative;
 
-	.light-bulb {
-		height: 200px;
-		position: absolute;
-		right: 20%;
-
-		.chain {
-			border-right: 5px dotted #fff;
-			height: 100%;
-			margin: 0 auto;
-			position: absolute;
-			top: 60px;
-			left: 50px;
-
-		}
-
-		img {
-			height: 75px;
-			width: 75px;
-			float: left;
-		}
-	}
-
 	h1 {
 		margin: .5em;
 		text-align: center;
@@ -82,18 +75,33 @@ html, body {
 		width: 100%;
 
 		.ideas {
+			@include flex-center;
 			position: relative;
 
-			h1 {
-				font: 3em 'Permanent Marker';
-				letter-spacing: 2px;
-				margin: 0;							
+			.spacer, img {
+				height: 75px;
+				width: 75px;
 			}
 
-			.light-bulb {
+			h1 {
+				font: 4em 'Permanent Marker';
+				letter-spacing: 3px;
+				margin: 0;								
+			}
+
+			.light-bulb {				
 				position: absolute;
-				top: 0;
-				left: 0;
+				margin-left: 10px;
+				animation: revealText 3s ease-in-out forwards;
+
+				.chain {
+					border-right: 6px dotted #fff;
+					height: 100%;
+					margin: 0 auto;
+					position: absolute;
+					top: 61px;
+					left: 51px;
+				}
 			}
 		}
 
