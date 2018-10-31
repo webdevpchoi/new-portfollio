@@ -8,67 +8,67 @@ html {
 html, body {
   height: 100%;
   width: 100%;
-  margin: 0; }
+  margin: 0;
+  overflow: hidden;
+  min-width: 320px; }
 
-@keyframes appear {
-  from {
-    transform: translate3d(-20px, 0, 0);
+@keyframes slideUp {
+  0% {
     opacity: 0;
-    color: #888888; }
-  50% {
-    text-shadow: 0 15px 40px rgba(0, 0, 0, 0.6); }
-  to {
-    transform: translate3d(0, 0, 0);
-    opacity: 1;
-    color: #fff; } }
-
-@keyframes revealText {
-  0% { }
-  50% {
-    transform: translate3d(-150%, 0, 0); }
+    transform: translate3d(0, 100%, 0); }
   100% {
-    transform: translate3d(155%, 0, 0); } }
+    opacity: 1;
+    transform: translate3d(0, 0, 0); } }
+
+@keyframes pullChain {
+  0% {
+    height: 80%; }
+  50% {
+    height: 100%; }
+  100% {
+    height: 80%; } }
 
 .intro {
-  display: flex;
   justify-content: center;
-  align-items: center;
   height: 100%;
   width: 100%;
   background: #000;
   color: #fff;
-  position: relative; }
+  position: relative;
+  padding: 0 15px;
+  overflow: hidden;
+  text-align: center; }
   .intro h1 {
-    margin: .5em;
+    margin: .5em 0 0 0;
     text-align: center;
-    animation: appear 2s; }
+    font-weight: 900;
+    text-transform: uppercase;
+    font-size: 2.2em;
+    animation: slideUp .7s ease-in-out; }
   .intro .slogan {
     letter-spacing: 1px;
-    width: 100%; }
+    position: relative;
+    margin-top: 2.5rem; }
     .intro .slogan .ideas {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      position: relative; }
-      .intro .slogan .ideas .spacer, .intro .slogan .ideas img {
-        height: 75px;
-        width: 75px; }
-      .intro .slogan .ideas h1 {
-        font: 4em 'Permanent Marker';
-        letter-spacing: 3px;
-        margin: 0; }
-      .intro .slogan .ideas .light-bulb {
-        position: absolute;
-        margin-left: 10px;
-        animation: revealText 3s ease-in-out forwards; }
-        .intro .slogan .ideas .light-bulb .chain {
-          border-right: 6px dotted #fff;
-          height: 100%;
-          margin: 0 auto;
-          position: absolute;
-          top: 61px;
-          left: 51px; }
+      font: 5em 'Permanent Marker';
+      letter-spacing: 3px;
+      margin: 0 0 .5em 0; }
     .intro .slogan .reality {
       text-transform: uppercase;
       letter-spacing: 2px;
       font-size: 2.5em; }
+  .intro .light-bulb {
+    display: inline-block;
+    margin: 0 auto;
+    position: relative; }
+    .intro .light-bulb img {
+      height: 150px;
+      width: 150px; }
+    .intro .light-bulb .chain {
+      border-right: 7px dotted #fff;
+      margin: 0 auto;
+      height: 80%;
+      position: absolute;
+      top: 117px;
+      left: 100px;
+      animation: pullChain .7s .7s ease-in-out; }
