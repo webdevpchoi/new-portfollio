@@ -17,6 +17,16 @@ html, body {
 }
 
 //animation
+@keyframes {
+	from {
+		height: 25px;
+	}
+
+	to {
+
+	}
+}
+
 @keyframes slideUp {
 	0% {
 		opacity: 0;
@@ -43,6 +53,22 @@ html, body {
 	}
 }
 
+@keyframes whiteOut {
+	from {
+		transform: scale(1);
+		background: transparent;
+	}
+
+	1% {
+		background: #fff;
+	}
+
+	to {
+		transform: scale(10);
+		background: #fff;
+	}
+}
+
 //sass mixins
 @mixin flex-center {
 	display: flex;
@@ -50,8 +76,20 @@ html, body {
 	align-items: center;
 }
 
+.whiteout {
+	width: 100px;
+	height: 100px;
+	background: transparent;
+	position: absolute;
+	border-radius: 50%;
+	top: 314px;
+	animation: whiteOut 2s ease-in-out;
+}
+
 .intro {
-	justify-content: center;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
 	height: 100%;
 	width: 100%;
 	background: #000;
@@ -90,9 +128,10 @@ html, body {
 	}
 
 	.light-bulb {
-		display: inline-block;
-		margin: 0 auto;
+		display: flex;
 		position: relative;
+		justify-content: center;
+		align-items: center;
 
 			img {
 				height: 150px;
