@@ -56,16 +56,14 @@ html, body {
 @keyframes whiteOut {
 	from {
 		transform: scale(1);
-		background: transparent;
 	}
-
-	1% {
-		background: #fff;
-	}
+	 1% {
+	 	background: #fff;
+	 }
 
 	to {
 		transform: scale(10);
-		background: #fff;
+		background: #fff;	
 	}
 }
 
@@ -76,14 +74,18 @@ html, body {
 	align-items: center;
 }
 
+.animate-whiteout {
+	animation: whiteOut 1s ease-in-out forwards;
+}
+
 .whiteout {
 	width: 100px;
 	height: 100px;
 	background: transparent;
 	position: absolute;
 	border-radius: 50%;
-	top: 314px;
-	animation: whiteOut 2s ease-in-out;
+	top: 0;
+	z-index: 1;
 }
 
 .intro {
@@ -126,26 +128,33 @@ html, body {
 			font-size: 2.5em;
 		}
 	}
-
-	.light-bulb {
-		display: flex;
+	
+	.lightbulb-container {
 		position: relative;
-		justify-content: center;
-		align-items: center;
+		@include flex-center;
 
-			img {
-				height: 150px;
-				width: 150px;
-			}
+		.light-bulb {
+			display: flex;
+			position: relative;
+			justify-content: center;
+			align-items: center;
+			z-index: 2;
 
-			.chain {
-				border-right: 7px dotted #fff;
-				margin: 0 auto;
-				height: 80%;
-				position: absolute;
-				top: 117px;
-				left: 100px;
-				animation: pullChain .7s .7s ease-in-out;
-			}
-		}			
+				img {
+					height: 150px;
+					width: 150px;
+					border-radius: 50%;			
+				}
+
+				.chain {
+					border-right: 7px dotted #fff;
+					margin: 0 auto;
+					height: 80%;
+					position: absolute;
+					top: 117px;
+					left: 100px;
+					animation: pullChain .7s .7s ease-in-out;
+				}
+			}			
+	}
 }

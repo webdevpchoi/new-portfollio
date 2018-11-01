@@ -35,13 +35,15 @@ html, body {
 
 @keyframes whiteOut {
   from {
-    transform: scale(1);
-    background: transparent; }
+    transform: scale(1); }
   1% {
     background: #fff; }
   to {
     transform: scale(10);
     background: #fff; } }
+
+.animate-whiteout {
+  animation: whiteOut 1s ease-in-out forwards; }
 
 .whiteout {
   width: 100px;
@@ -49,8 +51,8 @@ html, body {
   background: transparent;
   position: absolute;
   border-radius: 50%;
-  top: 314px;
-  animation: whiteOut 2s ease-in-out; }
+  top: 0;
+  z-index: 1; }
 
 .intro {
   display: flex;
@@ -83,19 +85,26 @@ html, body {
       text-transform: uppercase;
       letter-spacing: 2px;
       font-size: 2.5em; }
-  .intro .light-bulb {
-    display: flex;
+  .intro .lightbulb-container {
     position: relative;
+    display: flex;
     justify-content: center;
     align-items: center; }
-    .intro .light-bulb img {
-      height: 150px;
-      width: 150px; }
-    .intro .light-bulb .chain {
-      border-right: 7px dotted #fff;
-      margin: 0 auto;
-      height: 80%;
-      position: absolute;
-      top: 117px;
-      left: 100px;
-      animation: pullChain .7s .7s ease-in-out; }
+    .intro .lightbulb-container .light-bulb {
+      display: flex;
+      position: relative;
+      justify-content: center;
+      align-items: center;
+      z-index: 2; }
+      .intro .lightbulb-container .light-bulb img {
+        height: 150px;
+        width: 150px;
+        border-radius: 50%; }
+      .intro .lightbulb-container .light-bulb .chain {
+        border-right: 7px dotted #fff;
+        margin: 0 auto;
+        height: 80%;
+        position: absolute;
+        top: 117px;
+        left: 100px;
+        animation: pullChain .7s .7s ease-in-out; }
