@@ -73,9 +73,13 @@ html, body {
 	justify-content: center;
 	align-items: center;
 }
-
+//animations & transitions
 .animate-whiteout {
 	animation: whiteOut 1s ease-in-out forwards;
+}
+
+.transition-lightbulb {
+	transform: scale(.5);
 }
 
 .whiteout {
@@ -133,12 +137,15 @@ html, body {
 		position: relative;
 		@include flex-center;
 
-		.light-bulb {
+		.lightbulb {
 			display: flex;
 			position: relative;
 			justify-content: center;
 			align-items: center;
 			z-index: 2;
+			transition: all 3s;
+			top: 0;
+			left: 0;
 
 				img {
 					height: 150px;

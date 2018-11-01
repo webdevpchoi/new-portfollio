@@ -45,6 +45,9 @@ html, body {
 .animate-whiteout {
   animation: whiteOut 1s ease-in-out forwards; }
 
+.transition-lightbulb {
+  transform: scale(0.5); }
+
 .whiteout {
   width: 100px;
   height: 100px;
@@ -90,17 +93,20 @@ html, body {
     display: flex;
     justify-content: center;
     align-items: center; }
-    .intro .lightbulb-container .light-bulb {
+    .intro .lightbulb-container .lightbulb {
       display: flex;
       position: relative;
       justify-content: center;
       align-items: center;
-      z-index: 2; }
-      .intro .lightbulb-container .light-bulb img {
+      z-index: 2;
+      transition: all 3s;
+      top: 0;
+      left: 0; }
+      .intro .lightbulb-container .lightbulb img {
         height: 150px;
         width: 150px;
         border-radius: 50%; }
-      .intro .lightbulb-container .light-bulb .chain {
+      .intro .lightbulb-container .lightbulb .chain {
         border-right: 7px dotted #fff;
         margin: 0 auto;
         height: 80%;
