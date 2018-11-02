@@ -1,9 +1,4 @@
 //global styles
-html {
-  box-sizing: border-box;
-  font-family: 'Raleway', sans-serif;
-}
-
 *, *:before, *:after {
   box-sizing: inherit;
 }
@@ -14,6 +9,15 @@ html, body {
 	margin: 0;
 	overflow: hidden;
 	min-width: 320px;
+}
+
+html {
+  box-sizing: border-box;
+  font-family: 'Raleway', sans-serif;
+}
+
+body {
+	position: relative;
 }
 
 //animation
@@ -92,6 +96,50 @@ html, body {
 	z-index: 1;
 }
 
+//portfolio 
+.portfolio {
+	display: flex;
+	z-index: 10;
+	background: #fff;
+	
+	.spacer {
+		height: 273px;
+	}
+
+	.lightbulb-container {
+	@include flex-center;
+	z-index: 3;
+
+		.lightbulb {
+			display: flex;
+			position: relative;
+			justify-content: center;
+			align-items: center;
+			z-index: 2;
+			transition: all 3s;
+			top: 0;
+			left: 0;
+
+				img {
+					height: 150px;
+					width: 150px;
+					border-radius: 50%;			
+				}
+
+				.chain {
+					border-right: 7px dotted #fff;
+					margin: 0 auto;
+					height: 80%;
+					position: absolute;
+					top: 117px;
+					left: 100px;
+					animation: pullChain .7s .7s ease-in-out;
+				}
+		}			
+	}
+}
+
+//cover page
 .intro {
 	display: flex;
 	align-items: center;
@@ -100,10 +148,11 @@ html, body {
 	width: 100%;
 	background: #000;
 	color: #fff;
-	position: relative;
+	position: absolute;
 	padding: 0 15px;
 	overflow: hidden;
 	text-align: center;
+	top: 0;
 
 	h1 {
 		margin: .5em 0 0 0;
@@ -136,6 +185,7 @@ html, body {
 	.lightbulb-container {
 		position: relative;
 		@include flex-center;
+		display: none;
 
 		.lightbulb {
 			display: flex;

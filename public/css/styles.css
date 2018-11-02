@@ -1,7 +1,3 @@
-html {
-  box-sizing: border-box;
-  font-family: 'Raleway', sans-serif; }
-
 *, *:before, *:after {
   box-sizing: inherit; }
 
@@ -11,6 +7,13 @@ html, body {
   margin: 0;
   overflow: hidden;
   min-width: 320px; }
+
+html {
+  box-sizing: border-box;
+  font-family: 'Raleway', sans-serif; }
+
+body {
+  position: relative; }
 
 @keyframes {
   from {
@@ -57,6 +60,39 @@ html, body {
   top: 0;
   z-index: 1; }
 
+.portfolio {
+  display: flex;
+  z-index: 10;
+  background: #fff; }
+  .portfolio .spacer {
+    height: 273px; }
+  .portfolio .lightbulb-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 3; }
+    .portfolio .lightbulb-container .lightbulb {
+      display: flex;
+      position: relative;
+      justify-content: center;
+      align-items: center;
+      z-index: 2;
+      transition: all 3s;
+      top: 0;
+      left: 0; }
+      .portfolio .lightbulb-container .lightbulb img {
+        height: 150px;
+        width: 150px;
+        border-radius: 50%; }
+      .portfolio .lightbulb-container .lightbulb .chain {
+        border-right: 7px dotted #fff;
+        margin: 0 auto;
+        height: 80%;
+        position: absolute;
+        top: 117px;
+        left: 100px;
+        animation: pullChain .7s .7s ease-in-out; }
+
 .intro {
   display: flex;
   align-items: center;
@@ -65,10 +101,11 @@ html, body {
   width: 100%;
   background: #000;
   color: #fff;
-  position: relative;
+  position: absolute;
   padding: 0 15px;
   overflow: hidden;
-  text-align: center; }
+  text-align: center;
+  top: 0; }
   .intro h1 {
     margin: .5em 0 0 0;
     text-align: center;
@@ -92,7 +129,8 @@ html, body {
     position: relative;
     display: flex;
     justify-content: center;
-    align-items: center; }
+    align-items: center;
+    display: none; }
     .intro .lightbulb-container .lightbulb {
       display: flex;
       position: relative;
