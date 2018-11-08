@@ -12,143 +12,48 @@ html {
   box-sizing: border-box;
   font-family: 'Raleway', sans-serif; }
 
-body {
-  position: relative; }
-
-@keyframes {
-  from {
-    height: 25px; }
-  to { } }
-
-@keyframes slideUp {
-  0% {
-    opacity: 0;
-    transform: translate3d(0, 100%, 0); }
-  100% {
-    opacity: 1;
-    transform: translate3d(0, 0, 0); } }
-
-@keyframes pullChain {
-  0% {
-    height: 80%; }
-  50% {
-    height: 100%; }
-  100% {
-    height: 80%; } }
-
-@keyframes whiteOut {
-  from {
-    transform: scale(1); }
-  1% {
-    background: #fff; }
-  to {
-    transform: scale(10);
-    background: #fff; } }
-
-.animate-whiteout {
-  animation: whiteOut 1s ease-in-out forwards; }
-
-.transition-lightbulb {
-  transform: scale(0.5); }
-
-.whiteout {
-  width: 100px;
-  height: 100px;
-  background: transparent;
-  position: absolute;
-  border-radius: 50%;
-  top: 0;
-  z-index: 1; }
-
-.portfolio {
-  display: flex;
-  z-index: 10;
-  background: #fff; }
-  .portfolio .spacer {
-    height: 273px; }
-  .portfolio .lightbulb-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 3; }
-    .portfolio .lightbulb-container .lightbulb {
-      display: flex;
-      position: relative;
-      justify-content: center;
-      align-items: center;
-      z-index: 2;
-      transition: all 3s;
-      top: 0;
-      left: 0; }
-      .portfolio .lightbulb-container .lightbulb img {
-        height: 150px;
-        width: 150px;
-        border-radius: 50%; }
-      .portfolio .lightbulb-container .lightbulb .chain {
-        border-right: 7px dotted #fff;
-        margin: 0 auto;
-        height: 80%;
-        position: absolute;
-        top: 117px;
-        left: 100px;
-        animation: pullChain .7s .7s ease-in-out; }
-
-.intro {
+.container {
+  height: 100%;
+  width: 100%;
   display: flex;
   align-items: center;
   flex-direction: column;
-  height: 100%;
-  width: 100%;
-  background: #000;
-  color: #fff;
-  position: absolute;
-  padding: 0 15px;
-  overflow: hidden;
-  text-align: center;
-  top: 0; }
-  .intro h1 {
-    margin: .5em 0 0 0;
-    text-align: center;
-    font-weight: 900;
-    text-transform: uppercase;
-    font-size: 2.2em;
-    animation: slideUp .7s ease-in-out; }
-  .intro .slogan {
-    letter-spacing: 1px;
+  overflow-y: scroll;
+  position: relative;
+  background: url("https://images.pexels.com/photos/212286/pexels-photo-212286.jpeg?cs=srgb&dl=action-plan-brainstorming-complex-212286.jpg&fm=jpg") no-repeat center/cover; }
+  .container .intro {
+    min-height: 100%;
+    width: 100%;
+    padding: 0 15px;
+    color: #fff; }
+    .container .intro h1, .container .intro p {
+      background: rgba(24, 23, 32, 0.4);
+      padding: 5px; }
+  .container .portfolio {
     position: relative;
-    margin-top: 2.5rem; }
-    .intro .slogan .ideas {
-      font: 5em 'Permanent Marker';
-      letter-spacing: 3px;
-      margin: 0 0 .5em 0; }
-    .intro .slogan .reality {
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      font-size: 2.5em; }
-  .intro .lightbulb-container {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    display: none; }
-    .intro .lightbulb-container .lightbulb {
+    top: -58px;
+    background: #181720;
+    width: 95%;
+    border-radius: 15px 15px 0px 0px;
+    color: #fff; }
+    .container .portfolio .navbar {
+      color: #fff;
       display: flex;
-      position: relative;
-      justify-content: center;
-      align-items: center;
-      z-index: 2;
-      transition: all 3s;
-      top: 0;
-      left: 0; }
-      .intro .lightbulb-container .lightbulb img {
-        height: 150px;
-        width: 150px;
-        border-radius: 50%; }
-      .intro .lightbulb-container .lightbulb .chain {
-        border-right: 7px dotted #fff;
-        margin: 0 auto;
-        height: 80%;
-        position: absolute;
-        top: 117px;
-        left: 100px;
-        animation: pullChain .7s .7s ease-in-out; }
+      justify-content: space-between; }
+      .container .portfolio .navbar .logo {
+        color: #fff;
+        padding: 5px 15px; }
+      .container .portfolio .navbar .down-arrow {
+        position: relative;
+        width: 42px;
+        height: 52px; }
+        .container .portfolio .navbar .down-arrow i {
+          position: absolute; }
+        .container .portfolio .navbar .down-arrow .arrow-1 {
+          top: 10px; }
+        .container .portfolio .navbar .down-arrow .arrow-2 {
+          top: 20px; }
+      .container .portfolio .navbar .social-icons {
+        padding: 5px 15px; }
+    .container .portfolio .content {
+      padding: 0 15px; }
