@@ -12,13 +12,25 @@ html {
   box-sizing: border-box;
   font-family: 'Raleway', sans-serif; }
 
+@keyframes portfolio-active {
+  0% {
+    width: 87%;
+    border-radius: 15px 15px 0 0;
+    height: 52px; }
+  50% {
+    width: 100%;
+    border-radius: 0; }
+  100% {
+    width: 100%;
+    height: 100%;
+    border-radius: 0; } }
+
 .container {
   height: 100%;
   width: 100%;
   display: flex;
   align-items: center;
   flex-direction: column;
-  overflow-y: scroll;
   position: relative;
   background: url("https://images.pexels.com/photos/212286/pexels-photo-212286.jpeg?cs=srgb&dl=action-plan-brainstorming-complex-212286.jpg&fm=jpg") no-repeat center/cover; }
   .container .intro {
@@ -30,16 +42,21 @@ html {
       background: rgba(24, 23, 32, 0.4);
       padding: 5px; }
   .container .portfolio {
-    position: relative;
-    top: -58px;
+    position: absolute;
+    bottom: 0;
     background: #181720;
-    width: 95%;
-    border-radius: 15px 15px 0px 0px;
-    color: #fff; }
+    min-width: 87%;
+    width: 87%;
+    border-radius: 15px 15px 0 0;
+    color: #fff;
+    height: 52px;
+    transition: all 1s ease-in-out; }
     .container .portfolio .navbar {
       color: #fff;
       display: flex;
-      justify-content: space-between; }
+      justify-content: space-between;
+      align-items: center;
+      font-size: 13px; }
       .container .portfolio .navbar .logo {
         color: #fff;
         padding: 5px 15px; }
@@ -55,5 +72,11 @@ html {
           top: 20px; }
       .container .portfolio .navbar .social-icons {
         padding: 5px 15px; }
+        .container .portfolio .navbar .social-icons i {
+          margin: 0 3px; }
     .container .portfolio .content {
       padding: 0 15px; }
+  .container .portfolio-active {
+    animation: portfolio-active .7s forwards ease-in-out; }
+  .container .portfolio-inactive {
+    animation: portfolio-active .7s reverse ease-in-out; }
