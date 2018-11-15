@@ -14,8 +14,11 @@ window.addEventListener('DOMContentLoaded', function(event) {
 
 	const container = document.querySelector('.container');
 	const portfolio = document.querySelector('.portfolio');
+	const content = document.querySelector('.content');
+	const simplebarContent = document.querySelector('.simplebar-content');
 
 	container.addEventListener('wheel', function(e) {
+		console.log(portfolio.scrollTop);
 		//scrolling down
 		if (e.deltaY > 0) {
 			if(portfolio.classList.contains('portfolio-inactive')) {
@@ -30,7 +33,7 @@ window.addEventListener('DOMContentLoaded', function(event) {
 		//scrolling up
 		if (e.deltaY < 0) {
 			//if at the top of the portfolio
-			if (portfolio.scrollTop == 0) {
+			if (simplebarContent.scrollTop == 0) {
 				portfolio.style.height = '100%';
 				portfolio.style.width = '100%';
 				portfolio.style.borderRadius = '0';
@@ -42,19 +45,6 @@ window.addEventListener('DOMContentLoaded', function(event) {
 					portfolio.style.borderRadius = '15px 15px 0 0';
 				}, 10)
 			}
-		}
-	})
-
-	//remove overflow before start of portfolio transition
-	portfolio.addEventListener('animationstart', function() {
-		if(portfolio.style.overflowY == 'scroll') {
-			portfolio.style.overflowY = 'hidden';
-		}
-	})
-	//add overflow after end of portfolio transition	
-	portfolio.addEventListener('animationend', function() {
-		if(portfolio.style.overflowY != 'scroll' && portfolio.classList.contains('portfolio-active')) {
-			portfolio.style.overflowY = 'scroll';
 		}
 	})
 })
